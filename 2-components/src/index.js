@@ -7,8 +7,22 @@ const App = () => {
   return (
     <div className="ui container comments">
       <CommentDetail
+        avatarImg={faker.image.avatar()}
         author={faker.name.findName()}
         text={faker.lorem.sentence()}
+        timeAgo="Sun at 4:05PM"
+      />
+      <CommentDetail
+        avatarImg={faker.image.avatar()}
+        author={faker.name.findName()}
+        text={faker.lorem.sentence()}
+        timeAgo="Tues at 7:33PM"
+      />
+      <CommentDetail
+        avatarImg={faker.image.avatar()}
+        author={faker.name.findName()}
+        text={faker.lorem.sentence()}
+        timeAgo="Fri at 4:20PM"
       />
     </div>
   );
