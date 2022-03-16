@@ -8,6 +8,13 @@ const App = () => {
   return (
     <div className="ui container comments">
       <ApprovalCard>
+        <div>
+          <h4>WARNING</h4>
+          Are you sure you want to do this?
+        </div>
+      </ApprovalCard>
+
+      <ApprovalCard>
         <CommentDetail
           avatarImg={faker.image.avatar()}
           author={faker.name.findName()}
@@ -31,6 +38,7 @@ const App = () => {
           timeAgo="Fri at 4:20PM"
         />
       </ApprovalCard>
+      <ApprovalCard>Test</ApprovalCard>
     </div>
   );
 };
