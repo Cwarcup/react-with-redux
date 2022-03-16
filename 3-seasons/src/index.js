@@ -9,7 +9,7 @@ class App extends React.Component {
 
     // this is the only place we do direct assignment
     // to this.state
-    this.state = { lat: 'loading...' };
+    this.state = { lat: '', errorMessage: '' };
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -19,14 +19,20 @@ class App extends React.Component {
       },
       (err) => {
         console.log(err);
-        this.setState({ lat: err.message });
+        this.setState({ lat: '', errorMessage: err.message });
       }
     );
   }
 
   render() {
-    // returns some JSX
-    return <div> Latitude: {this.state.lat}</div>;
+    if (this.state.errorMessage && !this.state.lat) {
+      return <div>Error: {this.state.errorMessage}</div>;
+    }
+    if (!this.state.errorMessage & this.state.lat) {
+      return <div>Latitude: {this.state.lat}</div>;
+    } else {
+      return <div>Loading 🙃</div>;
+    }
   }
 }
 
