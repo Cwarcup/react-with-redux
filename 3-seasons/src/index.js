@@ -1,26 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
+  // constructor is used when we want to create some initial setup when our component is created. It is optional.
   constructor(props) {
+    //must call super()
     super(props);
 
-    this.state = { lat: null }; // setting default value
+    // this is the only place we do direct assignment
+    // to this.state
+    this.state = { lat: 'loading...' };
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
-        // position is an object returned is our getCurrentPosition() runs sucessfully
-
         console.log(position);
-
-        this.setState({ lat: position.coords.latitude }); // use setState() to update
+        // setState() to change state
+        this.setState({ lat: position.coords.latitude });
       },
-      (err) => console.log(err)
+      (err) => {
+        console.log(err);
+        this.setState({ lat: err.message });
+      }
     );
   }
 
   render() {
+    // returns some JSX
     return <div> Latitude: {this.state.lat}</div>;
   }
 }
