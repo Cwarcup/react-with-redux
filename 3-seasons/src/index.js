@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
+import Loader from './Loader';
 
 class App extends React.Component {
   state = { lat: null, errorMessage: '' };
@@ -26,7 +27,7 @@ class App extends React.Component {
 
     return (
       <div>
-        <i className="spinner loading icon"></i>
+        <Loader />
       </div>
     );
   }
