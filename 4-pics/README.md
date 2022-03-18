@@ -10,20 +10,29 @@ Components
 - SearchBar will handle user search terms.
 - ImageList will render images on the screen.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Event handlers
+- we take a specific tag (i.e., input or form)
+  - whenever that tag emits that event, our callback function will be called. 
+  - ran into an issue with `this`.
+    - REMEMBER: use arrow function syntax to bind the function and ensure this has the appropriate value.
 
-In the project directory, you can run:
+Props
+- we learnt that props can only be communicated from a parent down to a child.
+  - this became an issue when we wanted to communicate the search term from the `SearchBar` up to the parent component (`App.js`).
+  - Solution: we pass a callback from the parent to the child, then the child calls the callback. 
 
-### `npm start`
+ImageList Rending
+- map function from JS
+- anytime we create a list we have to define a **key** which has a value that is consistent and unchanging from the other records. 
+  - often use to ID
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ImageCard ref system
+- when we want to reach into the DOM and interact with a particular element. 
+- we create a ref inside the constructor and then send it to the element using props. 
+  
+Grid CSS
+- didn't get into too much detail, but used it to properly layout our images and use the ref system. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
----
-
-From course [here:](https://www.udemy.com/course/react-redux/learn/lecture/12531254#content)
+[summary video](https://www.udemy.com/course/react-redux/learn/lecture/12531340#content)
