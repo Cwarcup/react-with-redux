@@ -16,16 +16,16 @@ export default class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar ui segment">
-        <div class="ui category search">
-          <div onSubmit={this.onFormSubmit} class="ui icon input">
+        <div className="ui category search">
+          <div onSubmit={this.onFormSubmit} className="ui icon input">
             <input
-              class="prompt"
+              className="prompt"
               type="text"
               placeholder={this.state.placeholder}
               value={this.state.term}
               onChange={this.onInputChange}
             />
-            <i class="search icon"></i>
+            <i className="search icon"></i>
           </div>
         </div>
       </div>
