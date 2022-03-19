@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <div class="ui container">
         <SearchBar />
       </div>
     );
