@@ -11,13 +11,14 @@ export default class SearchBar extends Component {
     e.preventDefault();
 
     // TODO: make sure we call callback from parent component
+    this.props.onFormSubmit(this.state.term);
   };
 
   render() {
     return (
       <div className="search-bar ui segment">
         <div className="ui category search">
-          <div onSubmit={this.onFormSubmit} className="ui icon input">
+          <form onSubmit={this.onFormSubmit} className="ui icon input">
             <input
               className="prompt"
               type="text"
@@ -26,7 +27,7 @@ export default class SearchBar extends Component {
               onChange={this.onInputChange}
             />
             <i className="search icon"></i>
-          </div>
+          </form>
         </div>
       </div>
     );
