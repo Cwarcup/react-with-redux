@@ -18,6 +18,7 @@ export default class SearchBar extends Component {
     return (
       <div className="search-bar ui segment">
         <div className="ui category search">
+          <i className="big youtube icon"></i>
           <form onSubmit={this.onFormSubmit} className="ui icon input">
             <input
               className="prompt"
