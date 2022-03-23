@@ -26,7 +26,7 @@ const Convert = ({ language, text }) => {
     };
   }, [text]);
 
-  //useEffect#2
+  // useEffect#2
   // useEffect for debouncedText
   // will run anytime debouncedText is changed
   useEffect(() => {
