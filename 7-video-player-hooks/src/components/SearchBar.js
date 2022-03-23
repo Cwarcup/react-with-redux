@@ -22,6 +22,7 @@ const SearchBar = ({ onFormSubmit }) => {
             type="text"
             value={term}
             onChange={onInputChange}
+            placeholder="Search..."
           />
           <i className="search icon"></i>
         </form>
