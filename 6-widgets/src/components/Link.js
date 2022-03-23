@@ -6,6 +6,13 @@ import React from 'react';
 const Link = ({ className, href, children }) => {
   // prevent page reload, change URL, and navigate to new path
   const onClick = (event) => {
+    // if user holding command or control, then open on new tab
+    // we do NOT want to prevent default behavior
+    if (event.metaKey || event.ctrlKey) {
+      return;
+    }
+
+    // if user clicked on a link, prevent default behavior
     event.preventDefault();
     window.history.pushState({}, '', href);
 
