@@ -51,7 +51,7 @@ const Translate = () => {
         onSelectedChange={setLanguage}
       />
       <hr />
-      <h3 className="ui header">Output</h3>
+      <h3 className="ui header">Translated Text</h3>
       <Convert text={text} language={language} />
     </div>
   );
