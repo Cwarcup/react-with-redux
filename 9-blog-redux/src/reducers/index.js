@@ -1,7 +1,6 @@
-// rxreducer snippet
-
 import { combineReducers } from 'redux';
+import postReducer from './postReducer';
 
 export default combineReducers({
-  replaceMe: () => 'replaceMe',
+  posts: postReducer,
 });
