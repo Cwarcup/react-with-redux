@@ -53,3 +53,8 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
 Reducers: Learnt the first argument refers to the `state` and it is whatever was returned from the previous state.
 Usually make use of the `switch` statement.
 Learnt that a reducer must ALWAYS return a **new** array or object. Should not mutate the previous state.
+
+see notes such as:
+- [api requests with redux](https://github.com/Cwarcup/notes/blob/main/root/react/react-notes/api-request-redux.md)
+- [redux thunk](https://github.com/Cwarcup/notes/blob/main/root/react/react-notes/redux-thunk.md)
+- [lodash](https://github.com/Cwarcup/notes/blob/main/root/Library/Lodash.md)
