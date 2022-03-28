@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// Setting up Google OAuth2.0
+
 export class GoogleAuth extends Component {
   state = { isSignedIn: null }; // we do not know if user is signed in or not.
 
