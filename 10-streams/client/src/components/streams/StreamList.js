@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchStreams } from '../../actions';
 
@@ -6,6 +7,7 @@ import { fetchStreams } from '../../actions';
 // will use a class based component because we want to use componentDidMount() to fetch the data one time.
 
 class StreamList extends Component {
+  // fetchStreams on first page load
   componentDidMount() {
     this.props.fetchStreams();
   }
@@ -22,6 +24,7 @@ class StreamList extends Component {
     }
   }
 
+  // method to render stream list
   renderList() {
     return this.props.streams.map((stream) => {
       return (
@@ -36,12 +39,27 @@ class StreamList extends Component {
       );
     });
   }
-  
+
+  // method to render create stream button if a user is logged in
+  renderCreate() {
+    if (this.props.isSignedIn) {
+      return (
+        <div style={{ textAlign: 'right' }}>
+          <Link to="/streams/new" className="ui right labeled icon button">
+            <i className="plus square outline icon"></i>
+            Create Stream
+          </Link>
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <div>
         <h2>Streams</h2>
         <div className="ui celled list">{this.renderList()}</div>
+        {this.renderCreate()}
       </div>
     );
   }
@@ -51,6 +69,7 @@ const mapStateToProps = (state) => {
   return {
     streams: Object.values(state.streams),
     currentUserId: state.auth.userId,
+    isSignedIn: state.auth.isSignedIn,
   };
   // remember, our streams are an object. Need to get the values out of it.
   // use Object.values() to get the values out of the object.
