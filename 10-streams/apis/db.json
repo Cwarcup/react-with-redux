@@ -9,6 +9,12 @@
       "description": "Heres somne stream",
       "title": "other stream",
       "id": 2
+    },
+    {
+      "title": "I created this stream",
+      "description": "This was made by Curtis",
+      "userId": "109470109429125466757",
+      "id": 3
     }
   ]
 }
