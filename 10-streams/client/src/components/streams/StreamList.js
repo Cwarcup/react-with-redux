@@ -9,9 +9,18 @@ class StreamList extends Component {
   componentDidMount() {
     this.props.fetchStreams();
   }
+
+  
   render() {
     return <div>StreamList</div>;
   }
 }
 
-export default connect(null, { fetchStreams })(StreamList);
+const mapStateToProps = (state) => {
+  return { streams: Object.values(state.streams) };
+  // remember, our streams are an object. Need to get the values out of it.
+  // use Object.values() to get the values out of the object.
+  // now we have a prop called streams that is an array of all our streams.
+};
+
+export default connect(mapStateToProps, { fetchStreams })(StreamList);
