@@ -9,6 +9,7 @@ import {
   DELETE_STREAM,
   EDIT_STREAM,
 } from './types';
+import history from '../history';
 
 export const signIn = (userId) => {
   return {
@@ -29,8 +30,8 @@ export const createStream = (formValues) => async (dispatch, getState) => {
   const response = await streams.post('/streams', { ...formValues, userId }); // second argument is the data we want to send to the server
 
   dispatch({ type: CREATE_STREAM, payload: response.data }); // payload contains the data we want inside of response
-
   // Do some programmatic navigation to get back to the root route
+  history.push('/');     // <- call push() to navigate to a new URL to navigate the user
 };
 
 export const fetchStreams = () => async (dispatch) => {
