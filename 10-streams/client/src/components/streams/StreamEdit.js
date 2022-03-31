@@ -10,9 +10,12 @@ class StreamEdit extends Component {
   componentDidMount() {
     this.props.fetchStream(this.props.match.params.id);
   }
-  // is our callback for StreamForm
+
+  // onSubmit is our callback for StreamForm
+  // remember, editStream is an action creator that takes in an id, and formValues
+  // and makes a put request to /streams/${id}, with the updated formValues
   onSubmit = (formValues) => {
-    console.log(formValues);
+    this.props.editStream(this.props.match.params.id, formValues);
   };
 
   render() {
