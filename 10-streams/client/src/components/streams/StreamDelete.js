@@ -11,6 +11,7 @@ class StreamDelete extends Component {
     this.props.fetchStream(this.props.match.params.id);
   }
 
+  // use action creator to delete stream
   deleteStream = () => {
     this.props.deleteStream(this.props.match.params.id);
   };
