@@ -22,6 +22,11 @@ class StreamShow extends Component {
     this.buildPlayer();
   }
 
+  // cleanup after stream ends
+  componentWillUnmount() {
+    this.player.destroy();
+  }
+
   // build player - only display player once data is fetched
   buildPlayer() {
     if (this.player || !this.props.stream) {
