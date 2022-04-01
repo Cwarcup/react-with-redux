@@ -21,7 +21,7 @@ const StreamForm = (props) => {
   // creates a field for the form
   // passed to the form as a prop
   const renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`; // if true then add error class
+    const className = `field ${meta.error && meta.touched ? "error" : ""}`; // if true add error class
     return (
       <div className={className}>
         <label>{label}</label>
