@@ -13,8 +13,24 @@ class StreamShow extends Component {
   // use action creator to fetch stream
   componentDidMount() {
     const { id } = this.props.match.params;
-    console.log('this.videoRef', this.videoRef);
-    this.props.fetchStream(id);
+    this.props.fetchStream(id); // attempt to fetch stream
+    this.buildPlayer(); // build player
+  }
+
+  // any follow up render
+  componentDidUpdate() {
+    this.buildPlayer();
+  }
+
+  // build player - only display player once data is fetched
+  buildPlayer() {
+    if (this.player || !this.props.stream) {
+      // if player already exists or no stream
+      return;
+    }
+
+    const { id } = this.props.match.params;
+
     this.player = flv.createPlayer({
       type: 'flv',
       url: `http://localhost:8000/live/${id}.flv`,
